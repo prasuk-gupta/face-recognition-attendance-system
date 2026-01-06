@@ -1,0 +1,21 @@
+# Model weights & embeddings
+*.pt
+*.pkl
+
+# Generated / private data
+known_faces/
+attendance.csv
+
+# Python cache
+__pycache__/
+*.pyc
+
+
+Attendance data is generated locally in CSV format and is excluded from the
+repository to protect user privacy.
+
+### Attendance Output Format (CSV)
+
+Name, Timestamp  
+John_Doe, 2025-01-05 10:12:45  
+Jane_Doe, 2025-01-05 10:15:22
