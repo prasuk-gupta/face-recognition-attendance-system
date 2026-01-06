@@ -1,51 +1,65 @@
-# Face Recognition using YoloV8 and FaceNet
+# AI-Based Face Recognition Attendance System
 
-This repository contains code for a face recognition system using YoloV8 for face detection and FaceNet for face recognition. YoloV8 efficiently detects faces in images, while FaceNet accurately matches and recognizes the detected faces by generating unique embeddings.
+This repository contains a real-time face recognition attendance system developed
+as an academic and practical project inspired by modern surveillance and
+access-control pipelines.
 
-## Table of Contents
-- [Description](#description)
-- [Installation](#installation)
-- [Usage](#usage)
+The system uses **YOLOv8** for fast and accurate face detection and **FaceNet
+(InceptionResnetV1)** for embedding-based face recognition.
+
+---
+
+## Overview
+
+The application captures live video from a camera, detects faces in real time,
+matches them against stored facial embeddings, and marks attendance only once per
+day for each recognized individual. Attendance records are stored locally with
+timestamps for tracking and verification.
+
+This project focuses on the **end-to-end computer vision pipeline**, similar to
+those used in smart surveillance and security systems.
+
+---
+
+## Key Features
+
+- Real-time face detection using YOLOv8  
+- Face recognition using FaceNet embeddings  
+- Embedding-based identity matching with distance thresholding  
+- Duplicate attendance prevention (per day)  
+- Timestamp-based attendance logging  
+- CPU/GPU compatible execution  
+
+---
+
+## Tech Stack
+
+- Python  
+- OpenCV  
+- YOLOv8 (Ultralytics)  
+- FaceNet (InceptionResnetV1)  
+- PyTorch  
+- NumPy  
+
+---
+
+## Project Structure
+.
+├── detection/
+│ ├── config.yaml
+│ ├── yolov8_detector.py
+│ └── yolov8_trainer.py
+├── face_recognition.py
+├── generate_face_embeddings.py
+└── README.md
 
 
-
-## Description
-
-This project integrates YoloV8, a state-of-the-art object detection model, with FaceNet, a robust face recognition model. The system first uses YoloV8 to detect faces in an image or video. Once faces are detected, FaceNet generates embeddings for each face, which are then used to recognize and match faces against a database of known faces. This approach combines the speed of YoloV8 with the high accuracy of FaceNet, making it suitable for real-time face recognition applications.
+---
 
 ## Installation
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/todap/Face-Recognition-using-YoloV8-and-FaceNet.git
-    cd Face-Recognition-using-YoloV8-and-FaceNet
-    ```
+Install the required dependencies:
 
-2. Create and activate a virtual environment (optional but recommended):
-    ```bash
-    python3 -m venv venv
-    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-    ```
-
-3. Install the required packages:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-## Usage
-
-1. **Generate Face Embeddings:**
-    ```bash
-    python generate_face_embeddings.py
-    ```
-
-2. **Run Face Recognition:**
-    ```bash
-    python face_recognition.py
-    ```
-## Note    
-Dont forget to add your paths to directory
-
-
-
+```bash
+pip install -r requirements.txt
 
